@@ -95,7 +95,7 @@ export function DashboardLayout({ children, activeTab, onTabChange }: DashboardL
         <div className="p-6 h-full flex flex-col">
           <div className="flex items-center gap-3 mb-10 overflow-hidden">
             <Logo className="w-10 h-10 shrink-0" />
-            <span className="font-serif font-semibold text-xl text-brand-900 tracking-tight whitespace-nowrap">cognivio</span>
+            <span className="font-serif font-semibold text-xl text-brand-900 tracking-tight whitespace-nowrap">Cognivio</span>
             <button onClick={() => setIsSidebarOpen(false)} className="ml-auto md:hidden">
               <X className="w-5 h-5 text-slate-400" />
             </button>
