@@ -1,0 +1,11 @@
+{
+  "name": "Cognivio",
+  "description": "A holistic school wellness platform monitoring student nutrition, emotional health, and development through AI-powered insights for monitors, teachers, parents, and students.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "Firebase Authentication",
+    "Cloud Firestore",
+    "Gemini AI Analytics",
+    "Data Visualization"
+  ]
+}

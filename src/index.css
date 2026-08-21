@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", "Georgia", serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-handwriting: "Caveat", cursive;
+  --font-lora: "Lora", serif;
+  --font-quicksand: "Quicksand", sans-serif;
+  
+  --color-brand-50: #F9F8F4;
+  --color-brand-100: #DDE2C6;
+  --color-brand-200: #E0DDD5;
+  --color-brand-300: #C2C8AE;
+  --color-brand-400: #8D937B;
+  --color-brand-500: #5A5A40;
+  --color-brand-600: #4A4A30;
+  --color-brand-700: #3D3D28;
+  --color-brand-800: #29291A;
+  --color-brand-900: #3D403A;
+
+  --color-blue-50: #EFF6FF;
+  --color-blue-100: #DBEAFE;
+  --color-blue-500: #3B82F6;
+  --color-blue-600: #2563EB;
+  --color-blue-900: #1E3A8A;
+  
+  --color-rose-50: #FFF1F2;
+  --color-rose-100: #FFE4E6;
+  --color-rose-500: #F43F5E;
+  --color-rose-600: #E11D48;
+  
+  --color-emerald-50: #ECFDF5;
+  --color-emerald-100: #D1FAE5;
+  --color-emerald-500: #10B981;
+  --color-emerald-600: #059669;
+
+  --color-amber-50: #FFFBEB;
+  --color-amber-100: #FEF3C7;
+  --color-amber-500: #F59E0B;
+  --color-amber-600: #D97706;
+  
+  --color-accent-warm: #E6E0D2;
+  --color-accent-soft: #F0F2E8;
+  --color-accent-bold: #FF7043;
+  --color-accent-dark: #121212;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-50 text-brand-900 font-sans;
+  }
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif);
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  .font-handwriting {
+    font-family: var(--font-handwriting);
+  }
+  .font-lora {
+    font-family: var(--font-lora);
+  }
+  .font-quicksand {
+    font-family: var(--font-quicksand);
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+.glass {
+  @apply bg-white/60 backdrop-blur-md border border-brand-200 shadow-sm transition-all;
+}
+
+.card-organic {
+  @apply bg-white p-10 rounded-[40px] shadow-2xl shadow-brand-500/10 border border-brand-200;
+}

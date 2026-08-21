@@ -1,0 +1,96 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "Represents any user in the system (Student, Parent, Teacher, ERGA Monitor).",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "name": { "type": "string" },
+        "role": { "type": "string", "enum": ["student", "parent", "teacher", "monitor", "admin"] },
+        "age": { "type": "number" },
+        "grade": { "type": "string" },
+        "assignedTeacher": { "type": "string" },
+        "onboarded": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email", "role"]
+    },
+    "NutritionReport": {
+      "title": "ERGA Nutrition Report",
+      "description": "Daily nutrition assessment for a classroom by an ERGA monitor.",
+      "type": "object",
+      "properties": {
+        "monitorId": { "type": "string" },
+        "teacherName": { "type": "string" },
+        "classId": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "totalStudents": { "type": "number" },
+        "presentStudents": { "type": "number" },
+        "adequateCarbs": { "type": "number" },
+        "adequateProteins": { "type": "number" },
+        "adequateFats": { "type": "number" },
+        "adequateWater": { "type": "number" },
+        "junkFoodCount": { "type": "number" }
+      },
+      "required": ["monitorId", "classId", "date"]
+    },
+    "StudentJournal": {
+      "title": "Student Wellness Journal",
+      "description": "Daily wellness check-in submitted by a student.",
+      "type": "object",
+      "properties": {
+        "studentId": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "mood": { "type": "number" },
+        "stress": { "type": "number" },
+        "energy": { "type": "number" },
+        "sleep": { "type": "number" },
+        "focus": { "type": "number" },
+        "happiness": { "type": "number" },
+        "anxiety": { "type": "number" },
+        "social": { "type": "number" },
+        "motivation": { "type": "number" },
+        "note": { "type": "string" }
+      },
+      "required": ["studentId", "date"]
+    },
+    "Alert": {
+      "title": "Wellness Alert",
+      "description": "A system-generated or trend-based alert for a teacher regarding a student.",
+      "type": "object",
+      "properties": {
+        "studentId": { "type": "string" },
+        "studentName": { "type": "string" },
+        "teacherId": { "type": "string" },
+        "type": { "type": "string", "enum": ["low_mood", "high_stress", "low_energy"] },
+        "severity": { "type": "string", "enum": ["low", "medium", "high"] },
+        "message": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "resolved"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "resolvedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["studentId", "teacherId", "type", "status", "createdAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "User profiles and roles."
+    },
+    "nutritionReports/{reportId}": {
+      "schema": "NutritionReport",
+      "description": "Daily classroom nutrition submissions."
+    },
+    "studentJournals/{journalId}": {
+      "schema": "StudentJournal",
+      "description": "Daily student wellness journals."
+    },
+    "alerts/{alertId}": {
+      "schema": "Alert",
+      "description": "Wellness alerts for teachers."
+    }
+  }
+}
