@@ -52,3 +52,40 @@ The app seeks to establish a healthier and encouraging school atmosphere where s
 
 <img width="1731" height="1130" alt="Screenshot 2026-08-22 at 12 01 29 AM" src="https://github.com/user-attachments/assets/f71228e1-11b3-4105-8e98-2916530631fa" />
 
+
+
+## Running Locally
+
+### Step 0: Download the prerequisites
+
+Make sure you have the following installed:
+
+- Node.js
+- npm
+
+### Step 1: Clone the repository
+
+```bash
+git clone https://github.com/shanealexshibu1-crypto/Cognivio.git
+cd Cognivio
+```
+### Step 2: Install dependencies
+```bash
+npm install
+```
+
+### Step 3: Configure environment variables
+
+Create a file named .env in the root folder and paste your API key (from OpenRouter or your favorite provider).
+
+```bash
+api_key=YOUR_API_KEY_HERE
+url_api_key=https://openrouter.ai/api/v1
+```
+
+I used open router cause it is monstly free and unlimited
+
+### Step 4: Start the development server
+```bash
+npm run dev
+```
