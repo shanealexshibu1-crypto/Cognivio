@@ -1,12 +1,13 @@
 {
+  "functions": {
+    "server.ts": {
+      "runtime": "@vercel/node"
+    }
+  },
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/dist/server.cjs"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/"
+      "destination": "/server.ts"
     }
   ]
 }
