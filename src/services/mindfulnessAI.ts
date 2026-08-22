@@ -2,7 +2,7 @@ import { StudentJournal } from "../types";
 import { format } from "date-fns";
 
 export async function getMindfulnessAdvice(
-  userQuestion: string, 
+  chatHistory: { role: string, content: string }[], 
   recentJournals: StudentJournal[],
   userName: string,
   onChunk?: (text: string) => void
@@ -28,7 +28,7 @@ export async function getMindfulnessAdvice(
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        message: userQuestion,
+        messages: chatHistory,
         journalContext,
         userName
       })

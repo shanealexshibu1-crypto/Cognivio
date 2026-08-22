@@ -98,7 +98,8 @@ export function StudentDashboard({ activeTab, onTabChange }: StudentDashboardPro
 
     const userMessage = chatInput.trim();
     setChatInput('');
-    setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
+    const newMessages = [...messages, { role: 'user', content: userMessage }];
+    setMessages(newMessages);
     setIsTyping(true);
 
     try {
@@ -106,7 +107,7 @@ export function StudentDashboard({ activeTab, onTabChange }: StudentDashboardPro
       const recentData = journals.slice(0, 7);
 
       let firstChunk = true;
-      const finalRes = await getMindfulnessAdvice(userMessage, recentData, profile?.name || 'Student', (chunk) => {
+      const finalRes = await getMindfulnessAdvice(newMessages, recentData, profile?.name || 'Student', (chunk) => {
         if (firstChunk) {
           firstChunk = false;
           setIsTyping(false);

@@ -1,0 +1,22 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/server"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ],
+  "builds": [
+    {
+      "src": "server.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build"
+    }
+  ]
+}
