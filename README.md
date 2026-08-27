@@ -52,7 +52,11 @@ The app seeks to establish a healthier and encouraging school atmosphere where s
 
 <img width="1731" height="1130" alt="Screenshot 2026-08-22 at 12 01 29 AM" src="https://github.com/user-attachments/assets/f71228e1-11b3-4105-8e98-2916530631fa" />
 
+Demo:
 
+Web app on vercel: https://cognivio-nu.vercel.app/    (For some reason the ai chatbox dosen't work in vercel but it works through local deployment and using your own api key)
+
+Demo video: https://canva.link/l4tsh1mpvtufpqv
 
 ## Running Locally
 
